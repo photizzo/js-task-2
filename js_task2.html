@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start.ng| JS Task 2</title>
+    </head>
+    <script>
+        const data = [
+            {pricipal: 2500, time: 1.8},
+            {pricipal: 2500, time: 5},
+            {pricipal: 1000, time: 1},
+            {pricipal: 2000, time: 3},
+        ];
+interestCalculator(data);
+
+function interestCalculator(data) {
+    const interestData = [];
+
+    for (i=0; i<data.length; i++) {
+        const obj = data[i];
+        const principal = obj.pricipal;
+        const time = obj.time;
+
+        if (principal >= 2500 && (time >1 && time < 3)) { 
+            const rate = 3;
+            const interest = (principal * time * rate) /100;
+            interestData.push({principal: principal,
+                time: time,
+                rate: rate,
+                interest: interest});
+        } else if (principal >= 2500 && time >=3) {
+            const rate = 4;
+            const interest = (principal * time * rate)/100;
+            interestData.push({principal: principal,
+                time: time,
+                rate: rate,
+                interest: interest});
+        } else if (principal < 2500 || time <= 1) {
+            const rate = 2;
+            const interest = (principal * time * rate)/100;
+            interestData.push({principal: principal,
+                time: time,
+                rate: rate,
+                interest: interest});
+        } else {
+            const rate = 1;
+            const interest = (principal * time * rate)/100;
+            interestData.push({principal: principal,
+                time: time,
+                rate: rate,
+                interest: interest});
+        }
+    }  
+    console.log(interestData); 
+    return interestData;
+}
+    </script>
+    <body>
+
+    </body>
+</html>
